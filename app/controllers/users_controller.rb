@@ -21,9 +21,10 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user
       session[:id] = @user.id
+      session[:username] = @user.username
       redirect_to @user
     else
-      render :new
+      render :sign_in
     end
   end
 
