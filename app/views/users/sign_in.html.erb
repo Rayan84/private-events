@@ -1,0 +1,9 @@
+<br>
+<br>
+<h1>Sign In</h1>
+
+<%= form_tag('/users/logged_in', method: "get") do %>
+  <%= label_tag(:username, "Username")%>
+  <%= text_field_tag(:username) %>
+  <%= submit_tag("Submit")%>
+<% end %>

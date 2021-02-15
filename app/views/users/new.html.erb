@@ -1,0 +1,7 @@
+<br>
+<br>
+<%= form_with model: @user do |f| %>
+  <%= f.label :username, "Username"%>
+  <%= f.text_field :username, placeholder: "Enter your username"%>
+  <%= f.submit "Submit"%>
+<% end %>

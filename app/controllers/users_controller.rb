@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to show_user_path
+      redirect_to @user
     else
       render :new
     end
@@ -15,6 +15,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def logged_in
+    @user = User.find_by(username: params[:username])
+    if @user
+      session[:id] = @user.id
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   private
