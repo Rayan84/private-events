@@ -2,7 +2,8 @@
 <br>
 <h1>Create New Event</h1>
 <hr>
-<%= form_with model: @created_events do |f| %>
+<%= form_with model: @event do |f| %>
+  <%= @event.errors.full_messages %>
   <%= f.label :title, "Title"%>
   <br>
   <%= f.text_field :title, placeholder: "Enter the title"%>
