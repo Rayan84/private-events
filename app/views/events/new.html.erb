@@ -1,0 +1,28 @@
+<br>
+<br>
+<h1>Create New Event</h1>
+<hr>
+<%= form_with model: @created_events do |f| %>
+  <%= f.label :title, "Title"%>
+  <br>
+  <%= f.text_field :title, placeholder: "Enter the title"%>
+  <br>
+  <br>
+  <%= f.label :location, "Location"%>
+  <br>
+  <%= f.text_field :location, placeholder: "Enter the locaiton"%>
+  <br>
+  <br>
+  <%= f.label :date, "Date"%>
+  <br>
+  <%= f.date_field :date, placeholder: "Enter the date"%>
+  <br>
+  <br>
+  <%= f.label :description, "Description"%>
+  <br>
+  <%= f.text_area :description, placeholder: "Enter the details..." %>
+  <br>
+  <br>
+  <br>
+  <%= f.submit "Submit"%>
+<% end %>
