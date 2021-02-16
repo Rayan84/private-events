@@ -8,3 +8,21 @@
     </li>
   <% end %>
 </ul>
+
+<h2>Past Events</h2>
+<ul>
+  <% @user.attended_events.past.each do |event| %>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Attended Events</h2>
+<ul>
+  <% @user.attended_events.upcoming.each do |event| %>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  <% end %>
+</ul>
