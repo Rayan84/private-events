@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   def index
     @events = Event.all
   end
@@ -22,10 +21,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def add
+    @event = Event.find(params[:id])
+    @event.attendees << User.find(session[:id])
+    redirect_to @event
+  end
+
   private
 
   def event_params
     params.require(:event).permit(:title, :location, :date, :description)
   end
-
 end

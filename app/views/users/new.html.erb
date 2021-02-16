@@ -1,10 +1,13 @@
 <br>
 <br>
-<h1>Sign Up</h1>
-<%= form_with model: @user do |f| %>
-  <%= f.label :username, "Username"%>
-  <%= f.text_field :username, placeholder: "Enter your username"%>
-  <br>
-  <br>
-  <%= f.submit "Submit"%>
+
+<% if session[:id] == nil%>
+  <h1>Sign Up</h1>
+  <%= form_with model: @user do |f| %>
+    <%= f.label :username, "Username"%>
+    <%= f.text_field :username, placeholder: "Enter your username"%>
+    <br>
+    <br>
+    <%= f.submit "Submit"%>
+  <% end %>
 <% end %>

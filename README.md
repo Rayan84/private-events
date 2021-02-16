@@ -2,7 +2,7 @@
 
 # Rails Association Project
 
-This project involves dive into ActiveRecord’s associations, one of the best features it offers, laying out the data architecture.
+This project involves diving into ActiveRecord’s associations, one of the best features it offers, laying out the data architecture.
 
 We created private-events application in which, users can create events, attend events and specify their dates and locations.
 
