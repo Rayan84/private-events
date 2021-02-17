@@ -30,6 +30,7 @@ RSpec.describe 'Event', type: :model do
   end
 end
 
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Events' do
   before(:each) do
     @user = User.create(username: 'user1')
@@ -86,3 +87,4 @@ RSpec.feature 'Events' do
     expect(@event.attendees.exists?(1)).to eql(false)
   end
 end
+# rubocop:enable Metrics/BlockLength
