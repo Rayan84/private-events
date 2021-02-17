@@ -1,6 +1,7 @@
 <h1>User</h1>
 
-<%= @user.username %>
+<%= @user.username%>
+<h2>Created by this user</h2>
 <ul>
   <% @user.created_events.each do |event| %>
     <li>

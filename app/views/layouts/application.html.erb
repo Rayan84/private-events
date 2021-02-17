@@ -15,15 +15,15 @@
     <br>
     <%= link_to 'Events', root_path%>
     <br>
-    <% if session[:id] == nil%>
-      <%= link_to "Login", users_sign_in_path%>
-    <% else %>
+    <% if user_signed_in? %>
       <%= "Logged in as: " %>
-      <%= link_to session[:username], "/users/#{session[:id]}"%>
+      <%= link_to current_user.username, current_user%>
       <br>
       <%= link_to "Logout", users_log_out_path, method: :delete%>
       <br>
       <%= link_to "Create Event", new_event_path%>
+    <% else %>
+      <%= link_to "Login", users_sign_in_path%>
     <% end %>
     <%= yield %>
   </body>

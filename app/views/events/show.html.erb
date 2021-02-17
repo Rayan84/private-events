@@ -12,8 +12,8 @@
 <br>
 <%= @event.description%>
 <br>
-<% if !@event.attendees.exists?(session[:id]) && session[:id] != nil%>
-  <%= link_to "Attend this event", "/events/add/#{@event.id}", method: :put %>
+<% if !has_attendee? && user_signed_in? %>
+  <%= link_to "Attend this event", add_event_path, method: :put %>
 <% end %>
 <h2>Attendees</h2>
 <ul>
