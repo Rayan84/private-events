@@ -1,5 +1,5 @@
 module EventsHelper
-  def has_attendee?
+  def attendee?
     @event.attendees.exists?(session[:id])
   end
 
