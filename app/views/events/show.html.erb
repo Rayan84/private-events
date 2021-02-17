@@ -2,7 +2,7 @@
 <br>
 <h1>Events</h1>
 <hr>
-<%= @event.creator.username%>
+<%= link_to @event.creator.username, @event.creator%>
 <br>
 <%= @event.title %>
 <br>
@@ -12,13 +12,6 @@
 <br>
 <%= @event.description%>
 <br>
-<% if !attendee? && user_signed_in? %>
-  <%= link_to "Attend this event", add_event_path, method: :put %>
-<% end %>
+<%= attend_link %>
 <h2>Attendees</h2>
-<ul>
-  <% @event.attendees.each do |attendee|%>
-    <%= attendee.username %>
-    <br>
-  <% end %>
-</ul>
+<%= attendees_names %>

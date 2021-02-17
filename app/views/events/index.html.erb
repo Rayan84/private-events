@@ -4,19 +4,7 @@
 <hr>
 <h2>Past Events</h2>
 <br>
-<ul>
-  <% @events.past.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-</ul>
+<%= show_events(@events.past)%>
 <br>
 <h2>Upcoming Events</h2>
-<ul>
-  <% @events.upcoming.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-</ul>
+<%= show_events(@events.upcoming)%>

@@ -1,30 +1,12 @@
 <h1>User</h1>
 
-<%= @user.username%>
+<%= link_to @user.username, @user%>
 <h2>Created by this user</h2>
-<ul>
-  <% @user.created_events.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-</ul>
+<%= show_events(@user.created_events)%>
 
 <h2>Past Events</h2>
-<ul>
-  <% @user.attended_events.past.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-</ul>
+<%= show_events(@user.attended_events.past)%>
 
 <h2>Attended Events</h2>
-<ul>
-  <% @user.attended_events.upcoming.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-</ul>
+<%= show_events(@user.attended_events.upcoming)%>
 
