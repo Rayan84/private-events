@@ -1,0 +1,12 @@
+<h1>User</h1>
+
+<%= link_to @user.username, @user%>
+<h2>Created by this user</h2>
+<%= show_events(@user.created_events)%>
+
+<h2>Past Events</h2>
+<%= show_events(@user.attended_events.past)%>
+
+<h2>Attended Events</h2>
+<%= show_events(@user.attended_events.upcoming)%>
+

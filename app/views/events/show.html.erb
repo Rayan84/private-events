@@ -1,0 +1,17 @@
+<br>
+<br>
+<h1>Events</h1>
+<hr>
+<%= link_to @event.creator.username, @event.creator%>
+<br>
+<%= @event.title %>
+<br>
+<%= @event.location%>
+<br>
+<%= @event.date%>
+<br>
+<%= @event.description%>
+<br>
+<%= attend_link %>
+<h2>Attendees</h2>
+<%= attendees_names %>
